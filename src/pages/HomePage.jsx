@@ -1,8 +1,13 @@
+import {useState, useEffect} from "react"
 import { Container, Row, Col, Button} from 'react-bootstrap';
 import React from 'react'
-import Foto from "../assets/img/Foto.png"
+import Foto from "../assets/img/foto.png"
+import PM from "../assets/img/pm.png"
+import SoftEng from "../assets/img/softeng.png"
+import Business from "../assets/img/business.png"
 
 const HomePage = () => {
+
     return (
         <div className= "homepage">
             <header className="w-100 min-vh-100 d-flex align-items-center">
@@ -19,8 +24,28 @@ const HomePage = () => {
                     </Row>
                 </Container>
             </header>
-
-            <div className = "w-100 min-vh-100"> </div>
+            <div className = "expertise w-100 min-vh-100"> 
+            <Container className= "align-items-center">
+            <h1 className='text-center fw-bold'>Areas of Expertise</h1>
+                <Row className="expertise-list text-center">
+                    <Col>
+                    <img src={SoftEng} />
+                    <h3> Software Engineering</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam necessitatibus illum aspernatur ducimus ut sunt a saepe explicabo totam molestias!</p>
+                    </Col>
+                    <Col>
+                    <img src={PM} />
+                    <h3> Product Management</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus iusto unde quam minima perspiciatis voluptatibus fugiat velit voluptatum nobis quaerat.</p>
+                    </Col>
+                    <Col>
+                    <img src={Business} />
+                    <h3> Business Analyst</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate unde accusamus suscipit beatae enim autem quasi ducimus. Ipsam, quas autem.</p>
+                    </Col>
+                </Row>
+            </Container>
+            </div>
         </div>
     );
 };
