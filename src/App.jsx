@@ -1,8 +1,8 @@
 import {Routes, Route} from "react-router-dom";
-import Portfolio from "./pages/Portfolio";
 import HomePage from "./pages/HomePage";
-import AboutMe from "./pages/AboutMe";
 import NavbarComponent from "./components/NavbarComponent";
+import Projects from "./pages/Projects";
+import Expertise from "./pages/Expertise";
 
 function App() {
   return (
@@ -10,8 +10,8 @@ function App() {
       <NavbarComponent />
       <Routes>
         <Route path="/portfolio" Component={HomePage} />
-        <Route path="/portfolio/portfolio" Component={Portfolio} />
-        <Route path="/portfolio/aboutme" Component={AboutMe} />
+        <Route path="/portfolio/projects" Component={Projects} />
+        <Route path="/portfolio/expertise" Component={Expertise} />
       </Routes>
     </div>
   );

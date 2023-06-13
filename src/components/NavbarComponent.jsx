@@ -34,9 +34,6 @@ const NavbarComponent = () => {
                     })}
                 </Nav>
                 </Navbar.Collapse>
-                <div className= "text-center">
-                    <button> Contact Me</button>
-                </div>
             </Container>
             </Navbar>
         </div>
