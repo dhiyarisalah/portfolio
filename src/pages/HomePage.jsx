@@ -49,21 +49,24 @@ const HomePage = () => {
                         </Col>
                     </Row>
                 </Container>
-                <Container className='skills'>
                 <h1 className='text-center fw-bold'>Skills & Technology</h1>
-                    <Row className='skills-list'>
+                <div className='skills'>
                         {skills.map((data2)=> {
-                            return(<Col key= {data2.id}>
-                                <div className='skills-item'>
-                                    <div className='skill-content'>
-                                        <h5>{data2.name}</h5>
-                                        <img src={data2.img} alt={data2.name} />    
-                                    </div>
+                            return(<Col key= {data2.id} xs = {2} className='item mb-3'>
+                                <div>
+                                    <Row className='align-items-center'>
+                                        <Col>
+                                            <h5 className='name'>{data2.name}</h5>
+                                        </Col>
+                                        <Col>
+                                            <img src={data2.img} alt="" />
+                                        </Col>
+                                    </Row>
+                                
                                 </div>
                             </Col>)
                         })}
-                    </Row>
-                </Container>
+                </div>
             </div>
             <div className = "w-100 min-vh-100"> 
                 <Container className= "expertise align-items-center">
