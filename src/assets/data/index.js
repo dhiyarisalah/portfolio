@@ -126,11 +126,6 @@ export const skills= [
         img: projectplan
     },
     {
-        id: 17,
-        name: "Open Project",
-        img: openproject
-    },
-    {
         id: 18,
         name: "Tableu",
         img: tableu
@@ -139,11 +134,6 @@ export const skills= [
         id: 19,
         name: "Google Data Studio",
         img: datastudio
-    },
-    {
-        id: 20,
-        name: "Archimate",
-        img: archi
     },
     {
         id: 21,

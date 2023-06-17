@@ -8,7 +8,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
-import { projectNonProgramming } from '../assets/data';
+import { projectNonProgramming, skills } from '../assets/data';
+import FooterComponent from '../components/FooterComponent';
 
 const HomePage = () => {
     return (
@@ -28,7 +29,7 @@ const HomePage = () => {
                 </Container>
             </header>
             <div className = "w-100 min-vh-100"> 
-                <Container className= "expertise align-items-center">
+                <Container className= "expertise">
                 <h1 className='text-center fw-bold'>Areas of Expertise</h1>
                     <Row className="expertise-list text-center">
                         <Col>
@@ -48,8 +49,20 @@ const HomePage = () => {
                         </Col>
                     </Row>
                 </Container>
-                <Container className= "expertise align-items-center">
+                <Container className='skills'>
                 <h1 className='text-center fw-bold'>Skills & Technology</h1>
+                    <Row className='skills-list'>
+                        {skills.map((data2)=> {
+                            return(<Col key= {data2.id}>
+                                <div className='skills-item'>
+                                    <div className='skill-content'>
+                                        <h5>{data2.name}</h5>
+                                        <img src={data2.img} alt={data2.name} />    
+                                    </div>
+                                </div>
+                            </Col>)
+                        })}
+                    </Row>
                 </Container>
             </div>
             <div className = "w-100 min-vh-100"> 
@@ -136,7 +149,10 @@ const HomePage = () => {
                         </Swiper>      
                     </Row>
                 </Container>
-            </div>           
+            </div>          
+            <div>
+                <FooterComponent />
+            </div> 
         </div>
     );
 };
