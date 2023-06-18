@@ -13,7 +13,7 @@ const FooterComponent = () => {
         By Dhiya Risalah Ghaida
             </span>
         </Col>
-        <Col className='website'>
+        <Col className='website text-end'>
             <a href='https://www.linkedin.com/in/dhiyarisalah/' target= "_blank">
                 <img src={Linkedin} alt="LinkedIn" /> 
             </a> 

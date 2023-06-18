@@ -4,6 +4,7 @@ import Foto from "../assets/img/foto.png"
 import PM from "../assets/img/pm.png"
 import SoftEng from "../assets/img/softeng.png"
 import Business from "../assets/img/business.png"
+import CV from "../assets/data/cv.pdf"
 import "swiper/css";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -20,7 +21,7 @@ const HomePage = () => {
                         <Col style={{marginLeft: "110px"}}>
                             <h1 className='mb-4'>Hello, I’m <br /> <span> Dhiya Risalah Ghaida</span> </h1>
                             <p className='mb-4'>an Undergraduate Information and System Technology Student <br />at Bandung Institute of Technology </p>
-                            <Button>My Resume</Button>
+                            <Button onClick={() => window.open(CV, '_blank')} download> <i className="fas fa-download"></i> My Resume</Button>
                         </Col>
                         <Col style={{paddingLeft: "120px"}}>
                             <img src={Foto} />
@@ -32,17 +33,17 @@ const HomePage = () => {
                 <Container className= "expertise">
                 <h1 className='text-center fw-bold'>Areas of Expertise</h1>
                     <Row className="expertise-list text-center">
-                        <Col>
+                        <Col className='expertise-item'>
                         <img src={SoftEng} />
                         <h3> Software Engineering</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam necessitatibus illum aspernatur ducimus ut sunt a saepe explicabo totam molestias!</p>
                         </Col>
-                        <Col>
+                        <Col className='expertise-item'>
                         <img src={PM} />
                         <h3> Product Management</h3>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus iusto unde quam minima perspiciatis voluptatibus fugiat velit voluptatum nobis quaerat.</p>
                         </Col>
-                        <Col>
+                        <Col className='expertise-item'>
                         <img src={Business} />
                         <h3> Business Analyst</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate unde accusamus suscipit beatae enim autem quasi ducimus. Ipsam, quas autem.</p>
@@ -54,11 +55,11 @@ const HomePage = () => {
                         {skills.map((data2)=> {
                             return(<Col key= {data2.id} xs = {2} className='item mb-3'>
                                 <div>
-                                    <Row className='align-items-center'>
-                                        <Col>
+                                    <Row className='align-items-center content'>
+                                        <Col className='text-center'>
                                             <h5 className='name'>{data2.name}</h5>
                                         </Col>
-                                        <Col>
+                                        <Col className='text-center'>
                                             <img src={data2.img} alt="" />
                                         </Col>
                                     </Row>
