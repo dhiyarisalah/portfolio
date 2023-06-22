@@ -9,12 +9,14 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
-import { projectNonProgramming, skills } from '../assets/data';
+import { projectNonProgramming, projectProgramming, skills, competition, courses} from '../assets/data';
 import FooterComponent from '../components/FooterComponent';
+import NavbarComponent from '../components/NavbarComponent';
 
 const HomePage = () => {
     return (
         <div className= "homepage">
+            <NavbarComponent />
             <header className="w-100 min-vh-100 d-flex align-items-center">
                 <Container>
                     <Row className= "header-box d-flex align-items-center">
@@ -36,21 +38,22 @@ const HomePage = () => {
                         <Col className='expertise-item'>
                         <img src={SoftEng} />
                         <h3> Software Engineering</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam necessitatibus illum aspernatur ducimus ut sunt a saepe explicabo totam molestias!</p>
+                        <p>Software Development, Agile Methodologies, Software Testing, Technical Documentation, Continuous Integration and Deployment, Problem Solving and Troubleshooting</p>
                         </Col>
                         <Col className='expertise-item'>
                         <img src={PM} />
                         <h3> Product Management</h3>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus iusto unde quam minima perspiciatis voluptatibus fugiat velit voluptatum nobis quaerat.</p>
+                        <p>Product Research, Defining & Creating MVP, Product Metrics, Designing Usability Testing, Creating PRD, Product Roadmap, Product Prioritization, Agile Development, UI/UX Design, Competitive Analysis, System Requirement Analysis</p>
                         </Col>
                         <Col className='expertise-item'>
                         <img src={Business} />
                         <h3> Business Analyst</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate unde accusamus suscipit beatae enim autem quasi ducimus. Ipsam, quas autem.</p>
+                        <p>Requirements Gathering and Analysis, Stakeholder Management, Business Process Modeling, Data Analysis, Documentation and Reporting, Gap Analysis, Risk Analysis, Business Case Development</p>
                         </Col>
                     </Row>
                 </Container>
-                <h1 className='text-center fw-bold'>Skills & Technology</h1>
+                <Container className='skill text-center'>
+                <h1 className='title text-center fw-bold'>Skills & Technology</h1>
                 <div className='skills'>
                         {skills.map((data2)=> {
                             return(<Col key= {data2.id} xs = {2} className='item mb-3'>
@@ -68,12 +71,13 @@ const HomePage = () => {
                             </Col>)
                         })}
                 </div>
+                </Container>
             </div>
             <div className = "w-100 min-vh-100"> 
-                <Container className= "expertise align-items-center">
-                <h1 className='text-center fw-bold'>Projects</h1>         
-                    <Row>
-                    <h2 className='text-center'>NonProgramming</h2>      
+                <Container className= "projects align-items-center">
+                <h1 className='project text-center fw-bold'>Projects</h1>         
+                    <Row className='swiper-project'>
+                    <h2 className='subproject text-center'>NonProgramming</h2>      
                     <Swiper
                             slidesPerView={1}
                             spaceBetween={10}
@@ -86,11 +90,11 @@ const HomePage = () => {
                                 spaceBetween: 20,
                             },
                             768: {
-                                slidesPerView: 4,
+                                slidesPerView: 3,
                                 spaceBetween: 40,
                             },
                             1024: {
-                                slidesPerView: 5,
+                                slidesPerView: 4,
                                 spaceBetween: 50,
                             },
                             }}
@@ -112,8 +116,8 @@ const HomePage = () => {
                             })}
                         </Swiper>      
                     </Row>
-                    <Row>
-                    <h2 className='text-center'>Programming</h2>      
+                    <Row className='swiper-project'>
+                    <h2 className=' subproject text-center'>Programming</h2>    
                     <Swiper
                             slidesPerView={1}
                             spaceBetween={10}
@@ -126,25 +130,25 @@ const HomePage = () => {
                                 spaceBetween: 20,
                             },
                             768: {
-                                slidesPerView: 4,
+                                slidesPerView: 3,
                                 spaceBetween: 40,
                             },
                             1024: {
-                                slidesPerView: 5,
+                                slidesPerView: 4,
                                 spaceBetween: 50,
                             },
                             }}
                             modules={[Pagination]}
                             className="mySwiper"
                             >
-                            {projectNonProgramming.map((data1) => {
+                            {projectProgramming.map((data2) => {
                                 return (
-                                <SwiperSlide key= {data1.id}>
+                                <SwiperSlide key= {data2.id}>
                                 <div>
-                                    <img src={data1.image} />
+                                    <img src={data2.image} />
                                     <div>
-                                        <h5>{data1.name}</h5>
-                                        <p5>{data1.desc}</p5>
+                                        <h5>{data2.name}</h5>
+                                        <p5>{data2.desc}</p5>
                                     </div>
                                 </div>
                                 </SwiperSlide>
@@ -153,7 +157,25 @@ const HomePage = () => {
                         </Swiper>      
                     </Row>
                 </Container>
-            </div>          
+            </div>  
+            <div className = "w-100 min-vh-100"> 
+            <Container className= "certificates align-items-center">
+                <h1 className='certif text-center fw-bold'>Certifications & Honors</h1> 
+                <div className='certif-box'>
+                    <div className='compe'>
+                        {competition.map ((data3) => {
+                            return <Col key={data3.id} xs= {3} className='compe-item'>
+                                <img src={data3.img} alt={data3.name} />
+                            </Col>
+                        })}
+                    </div>
+                    <Row>
+
+                    </Row>
+                </div>
+
+            </Container>
+            </div>        
             <div>
                 <FooterComponent />
             </div> 
