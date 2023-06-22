@@ -109,6 +109,8 @@ const HomePage = () => {
                                     <div>
                                         <h5>{data1.name}</h5>
                                         <p5>{data1.desc}</p5>
+                                        <Button href={data1.link} target="_blank"> See Project
+                                        </Button>
                                     </div>
                                 </div>
                                 </SwiperSlide>
@@ -149,6 +151,8 @@ const HomePage = () => {
                                     <div>
                                         <h5>{data2.name}</h5>
                                         <p5>{data2.desc}</p5>
+                                        <Button href={data2.link} target="_blank"> See Project
+                                        </Button>
                                     </div>
                                 </div>
                                 </SwiperSlide>
@@ -161,25 +165,27 @@ const HomePage = () => {
             <div className = "w-100 min-vh-100"> 
             <Container className= "certificates align-items-center">
                 <h1 className='certif text-center fw-bold'>Certifications & Honors</h1> 
+                <h2 className='subcertif text-center'>Competitions</h2> 
                 <div className='certif-box'>
-                <h2 className='subcertif text-center'>Competitions</h2>  
                     <div className='compe'>
-                        {competition.map ((data3) => {
-                            return <Col key= {data3.id} xs = {3} className='compe-item mb-3'>
-                                <img src={data3.img} alt={data3.name} />
-                                <h5>{data3.name}</h5>
-                            </Col>
-                        })}
-                    </div>
-                    <h2 className='subcertif text-center'>Courses</h2>  
-                    <div className='compe'>
+                            {competition.map ((data3) => {
+                                return <Col key= {data3.id} xs = {3} className='compe-item mb-3'>
+                                    <img src={data3.img} alt={data3.name} />
+                                    <h5>{data3.name}</h5>
+                                </Col>
+                            })}
+                    </div> 
+                </div>
+                <h2 className='subcertif text-center'>Courses</h2>  
+                <div className='certif-box'>
+                <div className='compe'>
                         {courses.map ((data4) => {
                             return <Col key= {data4.id} xs = {3} className='compe-item mb-3'>
                                 <img src={data4.img} alt={data4.name} />
                                 <h5>{data4.name}</h5>
                             </Col>
                         })}
-                    </div>
+                </div>     
                 </div>
             </Container>
             </div>        
