@@ -162,18 +162,25 @@ const HomePage = () => {
             <Container className= "certificates align-items-center">
                 <h1 className='certif text-center fw-bold'>Certifications & Honors</h1> 
                 <div className='certif-box'>
+                <h2 className='subcertif text-center'>Competitions</h2>  
                     <div className='compe'>
                         {competition.map ((data3) => {
-                            return <Col key={data3.id} xs= {3} className='compe-item'>
+                            return <Col key= {data3.id} xs = {3} className='compe-item mb-3'>
                                 <img src={data3.img} alt={data3.name} />
+                                <h5>{data3.name}</h5>
                             </Col>
                         })}
                     </div>
-                    <Row>
-
-                    </Row>
+                    <h2 className='subcertif text-center'>Courses</h2>  
+                    <div className='compe'>
+                        {courses.map ((data4) => {
+                            return <Col key= {data4.id} xs = {3} className='compe-item mb-3'>
+                                <img src={data4.img} alt={data4.name} />
+                                <h5>{data4.name}</h5>
+                            </Col>
+                        })}
+                    </div>
                 </div>
-
             </Container>
             </div>        
             <div>
