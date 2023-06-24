@@ -106,10 +106,9 @@ const HomePage = () => {
                                 <SwiperSlide key= {data1.id}>
                                 <div>
                                     <img src={data1.image} />
-                                    <div>
+                                    <div className='project-content'>
                                         <h5>{data1.name}</h5>
-                                        <p5>{data1.desc}</p5>
-                                        <Button href={data1.link} target="_blank"> See Project
+                                        <Button href={data1.link} target="_blank" className='project-button'> See Project
                                         </Button>
                                     </div>
                                 </div>
@@ -148,10 +147,10 @@ const HomePage = () => {
                                 <SwiperSlide key= {data2.id}>
                                 <div>
                                     <img src={data2.image} />
-                                    <div>
+                                    <div className='project-content'>
                                         <h5>{data2.name}</h5>
                                         <p5>{data2.desc}</p5>
-                                        <Button href={data2.link} target="_blank"> See Project
+                                        <Button href={data2.link} target="_blank" className='project-button'> See Project
                                         </Button>
                                     </div>
                                 </div>
@@ -171,7 +170,7 @@ const HomePage = () => {
                             {competition.map ((data3) => {
                                 return <Col key= {data3.id} xs = {3} className='compe-item mb-3'>
                                     <img src={data3.img} alt={data3.name} />
-                                    <h5>{data3.name}</h5>
+                                    <h5 className='compe-title'>{data3.name}</h5>
                                 </Col>
                             })}
                     </div> 
@@ -182,7 +181,7 @@ const HomePage = () => {
                         {courses.map ((data4) => {
                             return <Col key= {data4.id} xs = {3} className='compe-item mb-3'>
                                 <img src={data4.img} alt={data4.name} />
-                                <h5>{data4.name}</h5>
+                                <h5 className='compe-title'>{data4.name}</h5>
                             </Col>
                         })}
                 </div>     

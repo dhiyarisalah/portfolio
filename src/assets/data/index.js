@@ -176,7 +176,7 @@ export const projectNonProgramming= [
         id: 1,
         name: "Vaaca: Hackathon Pitch Deck",
         image: project1,
-        desc: "lorem20",
+        desc: "",
         link: "https://drive.google.com/file/d/1aECLuKV6ztP_gD_Y4KvQu47RPR0I91H7/view?usp=sharing"
     },
     {
@@ -309,7 +309,7 @@ export const courses = [
     },
     {
         id: 4,
-        name: "Programming for Everybody (Getting Started with Python)",
+        name: "Programming for Everybody",
         img: course4
     }
 ]
